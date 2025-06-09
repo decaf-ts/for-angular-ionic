@@ -1,0 +1,25 @@
+<app-header
+  [model]="model"
+  [title]="'List ' + type"
+  center="true"
+  showBackButton="true"
+  operations="['read', 'create']"
+  color="primary">
+</app-header>
+
+<ion-content [fullscreen]="true">
+   <main class="main">
+    <app-container [hasSideMenu]="true">
+      <ion-card>
+        <ion-card-content>
+            <ngx-decaf-list
+              [model]="model"
+              [type]="type"
+              [operations]="['read', 'create', 'update', 'delete']"
+              (listenEvent)="handleEvent($event)"
+            />
+        </ion-card-content>
+      </ion-card>
+    </app-container>
+  </main>
+</ion-content>
